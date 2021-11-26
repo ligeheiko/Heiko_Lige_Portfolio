@@ -28,11 +28,11 @@ const Footer = () => {
     </LinkList>
     <SocialIconsContainer>
       <SocialContainer>
-      <SocialIcons href="https://github.com">
-        <AiFillAmazonSquare size="3rem"/>
+      <SocialIcons onClick={onClickUrl("https://github.com/ligeheiko")}>
+        <AiFillGithub size="3rem"/>
       </SocialIcons>
-      <SocialIcons onClick={onClickUrl("https://www.google.com")}>
-        <AiFillInstagram size="3rem"/>
+      <SocialIcons onClick={onClickUrl("https://www.linkedin.com/in/heiko-lige-3710591b8/")}>
+        <AiFillLinkedin size="3rem"/>
       </SocialIcons>
       <SocialIcons href="/pdf/cv.pdf" download="HeikoLigeCV">
         <AiFillFilePdf size="3rem"/>
