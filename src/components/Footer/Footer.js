@@ -1,8 +1,17 @@
 import React from 'react';
-import { AiFillBank, AiFillFilePdf, AiFillGithub, AiFillInstagram, AiFillLinkedin } from 'react-icons/ai';
+import { AiFillAmazonSquare, AiFillBank, AiFillFilePdf, AiFillGithub, AiFillInstagram, AiFillLinkedin, AiFillUpCircle } from 'react-icons/ai';
 
 import { SocialIcons } from '../Header/HeaderStyles';
 import { CompanyContainer, FooterWrapper, LinkColumn, LinkItem, LinkList, LinkTitle, Slogan, SocialContainer, SocialIconsContainer } from './FooterStyles';
+
+const openInNewTab = (url) =>{
+  const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
+  if(newWindow)newWindow=null
+}
+
+const onClickUrl = (url) => {
+  return () => openInNewTab(url)
+}
 
 const Footer = () => {
   return (
@@ -20,10 +29,10 @@ const Footer = () => {
     <SocialIconsContainer>
       <SocialContainer>
       <SocialIcons href="https://github.com">
-        <AiFillGithub size="3rem"/>
+        <AiFillAmazonSquare size="3rem"/>
       </SocialIcons>
-      <SocialIcons href="https://linkedin.com">
-        <AiFillLinkedin size="3rem"/>
+      <SocialIcons onClick={onClickUrl("https://www.google.com")}>
+        <AiFillInstagram size="3rem"/>
       </SocialIcons>
       <SocialIcons href="/pdf/cv.pdf" download="HeikoLigeCV">
         <AiFillFilePdf size="3rem"/>
