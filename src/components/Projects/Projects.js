@@ -3,13 +3,21 @@ import React from 'react';
 import { BlogCard, CardInfo, ExternalLinks, GridContainer, HeaderThree, Hr, Tag, TagList, TitleContent, UtilityList, Img } from './ProjectsStyles';
 import { Section, SectionDivider, SectionTitle } from '../../styles/GlobalComponents';
 import { projects } from '../../constants/constants';
+import Button from '../../styles/GlobalComponents/Button';
 
+const openInNewTab = (url) =>{
+  const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
+  if(newWindow)newWindow=null
+}
 
+const onClickUrl = (url) => {
+  return () => openInNewTab(url)
+}
 
 const Projects = () => (
  <Section nopadding id="projects">
    <SectionDivider />
-   <SectionTitle main>Projectsssss</SectionTitle>
+   <SectionTitle main>Projects</SectionTitle>
    <GridContainer>
      {projects.map(({id, image, title, description, tags, source, visit})=> (
        <BlogCard key={id}>
@@ -21,6 +29,7 @@ const Projects = () => (
          <CardInfo>
            {description}
          </CardInfo>
+         <br/>
          <div>
            <TitleContent>Stack</TitleContent>
            <TagList>
@@ -30,8 +39,8 @@ const Projects = () => (
            </TagList>
          </div>
          <UtilityList>
-           <ExternalLinks href={visit}>Code</ExternalLinks>
-           <ExternalLinks href={source}>Source</ExternalLinks>
+           <ExternalLinks href= {visit} target="_blank">Code</ExternalLinks>
+           <ExternalLinks href={onClickUrl(source)}> Source</ExternalLinks>
          </UtilityList>
        </BlogCard>
      ))}

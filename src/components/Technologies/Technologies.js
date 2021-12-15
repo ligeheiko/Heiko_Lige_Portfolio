@@ -9,7 +9,7 @@ const Technologies = () =>  (
   <br />
     <SectionTitle>Technologies</SectionTitle>
     <SectionText>
-      Technologies I'm familiar withsss
+      Technologies I'm familiar with
     </SectionText>
     <List>
       <ListItem>
